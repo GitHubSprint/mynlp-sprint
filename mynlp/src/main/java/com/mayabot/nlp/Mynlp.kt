@@ -17,7 +17,6 @@ package com.mayabot.nlp
 
 import com.mayabot.nlp.common.SettingItem
 import com.mayabot.nlp.common.injector.Injector
-import com.mayabot.nlp.common.logging.InternalLoggerFactory
 import com.mayabot.nlp.common.resources.NlpResource
 import com.mayabot.nlp.module.pinyin.PinyinService
 import com.mayabot.nlp.module.pinyin.split.PinyinSplitService
@@ -29,6 +28,7 @@ import com.mayabot.nlp.segment.FluentLexerBuilder
 import com.mayabot.nlp.segment.Lexer
 import com.mayabot.nlp.segment.Lexers
 import com.mayabot.nlp.segment.Sentence
+import org.slf4j.LoggerFactory
 import java.security.AccessController
 import java.security.PrivilegedAction
 import java.util.function.Consumer
@@ -185,7 +185,7 @@ constructor(
     companion object {
 
         @JvmField
-        val logger = InternalLoggerFactory.getInstance(Mynlp::class.java)!!
+        val logger = LoggerFactory.getLogger(Mynlp::class.java)!!
 
         private val builder = MynlpBuilder()
 

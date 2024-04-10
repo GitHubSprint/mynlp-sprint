@@ -16,8 +16,10 @@
 
 package com.mayabot.nlp.common.resources;
 
-import com.mayabot.nlp.common.logging.InternalLogger;
-import com.mayabot.nlp.common.logging.InternalLoggerFactory;
+
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.BufferedInputStream;
 import java.io.IOException;
@@ -30,7 +32,7 @@ import java.nio.charset.Charset;
  */
 public class URLNlpResource implements NlpResource {
 
-    static InternalLogger logger = InternalLoggerFactory.getInstance(URLNlpResource.class);
+    static Logger logger = LoggerFactory.getLogger(URLNlpResource.class);
 
     private final URL url;
     private final Charset charset;

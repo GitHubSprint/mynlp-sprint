@@ -12,23 +12,10 @@ import java.nio.file.Files;
 import java.util.List;
 import java.util.stream.Collectors;
 
-/**
- * 速度比较。
- * <p>
- * Mynlp 分词 使用 612 ms
- * 速度 1464429字/秒
- * <p>
- * 使用新的原子分词后，关闭词性和人名识别。
- * 性能达到 392 ms
- * 速度 2286303字/秒
- *
- * <p>
- * Ansj 分词 使用 1296 ms
- * 速度  691536字/秒
- */
+
 public class HowFast {
     public static void main(String[] args) throws Exception {
-        File file = new File("data.work/红楼梦.txt");
+        File file = new File("data.work/data.txt");
 
 
         List<String> lines = Files.readAllLines(file.toPath()).stream().filter(it -> !it.isEmpty()).collect(Collectors.toList());
@@ -46,7 +33,6 @@ public class HowFast {
         final int charNum = lines.stream().mapToInt(String::length).sum();
 
 
-        // 充分的预热，JVM会把部分方法调用编译为机器码
         try (BufferedReader reader = new BufferedReader(new StringReader(text))) {
             analyzer.scan(reader).forEach(x -> {
             });
@@ -64,9 +50,9 @@ public class HowFast {
             long t2 = System.currentTimeMillis();
 
             double time = (t2 - t1);
-            System.out.println("Mynlp 分词 使用 " + (int) time + " ms");
+            System.out.println("Mynlp użycie imiesłowu " + (int) time + " ms");
 
-            System.out.println("速度 " + (int) ((charNum / time) * 1000) + "字/秒");
+            System.out.println("prędkość " + (int) ((charNum / time) * 1000) + "słowa/sekundę");
         }
 
 //        System.out.println("--------Ansj----");
@@ -85,9 +71,9 @@ public class HowFast {
 //            long t2 = System.currentTimeMillis();
 //
 //            double time = (t2 - t1);
-//            System.out.println("Ansj 分词 使用 " + (int) time + " ms");
+//            System.out.println("Ans " + (int) time + " ms");
 //
-//            System.out.println("速度 " + (int) ((charNum / time) * 1000) + "字/秒");
+//            System.out.println("predkosc " + (int) ((charNum / time) * 1000) + "word/sec");
 //        }
 //
 //        System.out.println("xxxx");

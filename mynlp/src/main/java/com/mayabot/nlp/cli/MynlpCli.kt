@@ -1,17 +1,13 @@
 package com.mayabot.nlp.cli
 
 import com.mayabot.nlp.Mynlp
-import com.mayabot.nlp.common.logging.InternalLogLevel
-import com.mayabot.nlp.common.logging.JdkLogger
 import com.mayabot.nlp.segment.segment
 
 fun main(args: Array<String>) {
 
-    JdkLogger.defaultLevel = InternalLogLevel.WARN;
-
     Mynlp.configer().setAutoDownloadRes(true)
 
-    println("2012年的冬天".segment())
+    println("2012".segment())
 
     if (args.isEmpty()) {
         printTopHelp()

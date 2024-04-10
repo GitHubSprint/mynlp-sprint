@@ -22,13 +22,13 @@ import com.mayabot.nlp.common.Settings;
 import com.mayabot.nlp.common.injector.AbstractModule;
 import com.mayabot.nlp.common.injector.Injector;
 import com.mayabot.nlp.common.injector.Module;
-import com.mayabot.nlp.common.logging.InternalLogger;
-import com.mayabot.nlp.common.logging.InternalLoggerFactory;
 import com.mayabot.nlp.common.resources.ClasspathNlpResourceFactory;
 import com.mayabot.nlp.common.resources.FileNlpResourceFactory;
 import com.mayabot.nlp.common.resources.JarNlpResourceFactory;
 import com.mayabot.nlp.common.resources.NlpResourceFactory;
 import com.mayabot.nlp.common.utils.MynlpFactories;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.io.IOException;
@@ -45,7 +45,7 @@ import java.util.stream.Collectors;
  */
 public class MynlpBuilder {
 
-    public static InternalLogger logger = InternalLoggerFactory.getInstance("com.mayabot.nlp.Mynlp");
+    public static Logger logger = LoggerFactory.getLogger("com.mayabot.nlp.Mynlp");
 
     /**
      * 数据目录默认在当前工作目录.

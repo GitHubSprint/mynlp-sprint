@@ -1,14 +1,15 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    kotlin("jvm") version "1.5.32" apply false
+    kotlin("jvm") version "1.6.21" apply false
     id("idea")
     id("eclipse")
+    id("maven-publish")
 }
 
-description = "mynlp是mayabot开源的中文自然语言处理工具集"
+description = "mynlp mayabot"
 
-val buildVersion = "4.1.1"
+val buildVersion = "4.1.2_SPRINT"
 //val buildVersion = "4.0.1-local"
 val snapShot = false
 
@@ -18,7 +19,6 @@ allprojects {
             url = java.net.URI("https://repo.huaweicloud.com/repository/maven/")
         }
         mavenCentral()
-
     }
 }
 

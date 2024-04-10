@@ -3,8 +3,6 @@ package com.mayabot.nlp.segment.plugins.ner;
 import com.mayabot.nlp.MynlpEnv;
 import com.mayabot.nlp.common.Lists;
 import com.mayabot.nlp.common.injector.Singleton;
-import com.mayabot.nlp.common.logging.InternalLogger;
-import com.mayabot.nlp.common.logging.InternalLoggerFactory;
 import com.mayabot.nlp.common.resources.NlpResource;
 import com.mayabot.nlp.common.utils.CharNormUtils;
 import com.mayabot.nlp.perceptron.FeatureSet;
@@ -12,6 +10,8 @@ import com.mayabot.nlp.segment.Nature;
 import com.mayabot.nlp.segment.Sentence;
 import com.mayabot.nlp.segment.WordTerm;
 import com.mayabot.nlp.segment.plugins.pos.PerceptronPosService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.BufferedInputStream;
 import java.io.File;
@@ -25,7 +25,7 @@ public class PerceptronNerService {
     private final PerceptronPosService posService;
     private NERPerceptron perceptron;
 
-    static InternalLogger logger = InternalLoggerFactory.getInstance(PerceptronNerService.class);
+    static Logger logger = LoggerFactory.getLogger(PerceptronNerService.class);
 
     public PerceptronNerService(MynlpEnv mynlp,
                                 PerceptronPosService posService

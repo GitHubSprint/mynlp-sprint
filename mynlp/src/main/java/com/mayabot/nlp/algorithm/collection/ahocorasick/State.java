@@ -233,7 +233,7 @@ public class State {
     /**
      * 获取goto表
      *
-     * @return Map<Character, State>
+     * @return Map Character, State
      */
     public Map<Character, State> getSuccess() {
         return success;

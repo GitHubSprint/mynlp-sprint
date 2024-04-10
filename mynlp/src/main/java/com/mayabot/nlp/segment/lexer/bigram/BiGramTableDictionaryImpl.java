@@ -21,13 +21,13 @@ import com.mayabot.nlp.common.EncryptionUtil;
 import com.mayabot.nlp.common.Guava;
 import com.mayabot.nlp.common.TreeBasedTable;
 import com.mayabot.nlp.common.injector.Singleton;
-import com.mayabot.nlp.common.logging.InternalLogger;
-import com.mayabot.nlp.common.logging.InternalLoggerFactory;
 import com.mayabot.nlp.common.matrix.CSRSparseMatrix;
 import com.mayabot.nlp.common.resources.NlpResource;
 import com.mayabot.nlp.common.resources.UseLines;
 import com.mayabot.nlp.common.utils.CharSourceLineReader;
 import org.jetbrains.annotations.Nullable;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.io.ObjectInput;
@@ -50,7 +50,7 @@ public class BiGramTableDictionaryImpl extends BaseExternalizable implements BiG
 
     public static final String path = "core-dict/CoreDict.bigram.txt";
 
-    protected InternalLogger logger = InternalLoggerFactory.getInstance(this.getClass());
+    protected Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Nullable
     private final CoreDictionary coreDictionary;

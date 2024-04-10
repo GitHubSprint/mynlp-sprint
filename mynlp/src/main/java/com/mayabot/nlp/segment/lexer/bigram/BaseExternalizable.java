@@ -17,8 +17,8 @@
 package com.mayabot.nlp.segment.lexer.bigram;
 
 import com.mayabot.nlp.MynlpEnv;
-import com.mayabot.nlp.common.logging.InternalLogger;
-import com.mayabot.nlp.common.logging.InternalLoggerFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.*;
 
@@ -57,7 +57,7 @@ abstract class BaseExternalizable implements Externalizable {
      */
     public void restore() throws Exception {
 
-        InternalLogger logger = InternalLoggerFactory.getInstance(this.getClass());
+        Logger logger = LoggerFactory.getLogger(this.getClass());
 
         boolean success = false;
 

@@ -19,12 +19,12 @@ package com.mayabot.nlp.segment.plugins.customwords;
 import com.mayabot.nlp.MynlpEnv;
 import com.mayabot.nlp.algorithm.collection.dat.DoubleArrayTrieStringIntMap;
 import com.mayabot.nlp.common.injector.Singleton;
-import com.mayabot.nlp.common.logging.InternalLogger;
-import com.mayabot.nlp.common.logging.InternalLoggerFactory;
 import com.mayabot.nlp.common.resources.NlpResource;
 import com.mayabot.nlp.common.resources.UseLines;
 import com.mayabot.nlp.common.utils.CharNormUtils;
 import com.mayabot.nlp.common.utils.CharSourceLineReader;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.List;
 import java.util.TreeMap;
@@ -39,7 +39,7 @@ import static com.mayabot.nlp.MynlpConfigs.dictPathSetting;
 @Singleton
 public class DefaultCustomDictionary implements CustomDictionary {
 
-    static InternalLogger logger = InternalLoggerFactory.getInstance(DefaultCustomDictionary.class);
+    static Logger logger = LoggerFactory.getLogger(DefaultCustomDictionary.class);
 
     private DoubleArrayTrieStringIntMap dat;
 

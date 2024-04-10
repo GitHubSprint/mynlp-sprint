@@ -17,7 +17,7 @@
 package com.mayabot.nlp
 
 import com.mayabot.nlp.common.SettingItem
-import com.mayabot.nlp.common.logging.InternalLoggerFactory
+import org.slf4j.LoggerFactory
 import java.util.function.Consumer
 
 /**
@@ -29,7 +29,7 @@ object Mynlps {
 
     @JvmStatic
     @Deprecated("")
-    val logger = InternalLoggerFactory.getInstance("com.mayabot.nlp.Mynlps")!!
+    val logger = LoggerFactory.getLogger("com.mayabot.nlp.Mynlps")!!
 
     /**
      * 其他任何Mynlp方式之前调用，通过回调MynlpBuilder进行系统设置。

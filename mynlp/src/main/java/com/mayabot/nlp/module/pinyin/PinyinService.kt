@@ -20,11 +20,11 @@ import com.mayabot.nlp.MynlpConfigs.pinyinExtDicSetting
 import com.mayabot.nlp.MynlpConfigs.pinyinSetting
 import com.mayabot.nlp.MynlpEnv
 import com.mayabot.nlp.common.injector.Singleton
-import com.mayabot.nlp.common.logging.InternalLoggerFactory
 import com.mayabot.nlp.common.resources.NlpResource
 import com.mayabot.nlp.module.pinyin.Tex2PinyinComputer.parse
 import com.mayabot.nlp.module.pinyin.model.Pinyin
 import com.mayabot.nlp.module.pinyin.model.SimplePinyin
+import org.slf4j.LoggerFactory
 import java.util.*
 
 /**
@@ -34,7 +34,7 @@ import java.util.*
 class PinyinInnerDict(private val env: MynlpEnv) {
 
     companion object {
-        val logger = InternalLoggerFactory.getInstance(PinyinInnerDict::class.java)
+        val logger = LoggerFactory.getLogger(PinyinInnerDict::class.java)
     }
 
     val pinyinTable = load()

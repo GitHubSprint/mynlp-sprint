@@ -33,10 +33,10 @@ package com.mayabot.nlp.segment.plugins.correction;
 import com.mayabot.nlp.MynlpEnv;
 import com.mayabot.nlp.algorithm.collection.dat.DoubleArrayTrieMap;
 import com.mayabot.nlp.common.injector.Singleton;
-import com.mayabot.nlp.common.logging.InternalLogger;
-import com.mayabot.nlp.common.logging.InternalLoggerFactory;
 import com.mayabot.nlp.common.resources.NlpResource;
 import com.mayabot.nlp.common.utils.CharSourceLineReader;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.List;
 import java.util.TreeMap;
@@ -59,7 +59,7 @@ import static com.mayabot.nlp.common.resources.UseLines.lineReader;
 @Singleton
 public class DefaultCorrectionDictionary implements CorrectionDictionary {
 
-    static InternalLogger logger = InternalLoggerFactory.getInstance(DefaultCorrectionDictionary.class);
+    static Logger logger = LoggerFactory.getLogger(DefaultCorrectionDictionary.class);
 
 
 

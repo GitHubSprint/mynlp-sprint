@@ -17,10 +17,10 @@
 package com.mayabot.nlp.segment.wordnet;
 
 import com.mayabot.nlp.common.Guava;
-import com.mayabot.nlp.common.logging.InternalLogger;
-import com.mayabot.nlp.common.logging.InternalLoggerFactory;
 import com.mayabot.nlp.segment.Nature;
 import kotlin.collections.AbstractIterator;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.BitSet;
 import java.util.Collections;
@@ -40,7 +40,7 @@ import java.util.function.Consumer;
  */
 public class Wordpath {
 
-    private static InternalLogger logger = InternalLoggerFactory.getInstance(Wordpath.class);
+    private static Logger logger = LoggerFactory.getLogger(Wordpath.class);
 
     private BitSet bitSet;
 

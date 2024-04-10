@@ -17,10 +17,10 @@ package com.mayabot.nlp.module.pinyin;
 
 import com.mayabot.nlp.algorithm.collection.ahocorasick.AhoCoraickDoubleArrayTrieBuilder;
 import com.mayabot.nlp.algorithm.collection.ahocorasick.AhoCorasickDoubleArrayTrie;
-import com.mayabot.nlp.common.logging.InternalLogger;
-import com.mayabot.nlp.common.logging.InternalLoggerFactory;
 import com.mayabot.nlp.module.pinyin.model.Pinyin;
 import org.jetbrains.annotations.Nullable;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.*;
 
@@ -31,7 +31,7 @@ import java.util.*;
  */
 public class Tex2PinyinComputer {
 
-    InternalLogger logger = InternalLoggerFactory.getInstance(Tex2PinyinComputer.class);
+    Logger logger = LoggerFactory.getLogger(Tex2PinyinComputer.class);
 
     private AhoCorasickDoubleArrayTrie<Pinyin[]> trie = null;
 

@@ -3,10 +3,10 @@ package com.mayabot.nlp.segment.lexer.perceptron;
 import com.mayabot.nlp.MynlpConfigs;
 import com.mayabot.nlp.MynlpEnv;
 import com.mayabot.nlp.common.injector.Singleton;
-import com.mayabot.nlp.common.logging.InternalLogger;
-import com.mayabot.nlp.common.logging.InternalLoggerFactory;
 import com.mayabot.nlp.common.resources.NlpResource;
 import com.mayabot.nlp.segment.plugins.ner.PerceptronNerService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.List;
 
@@ -19,7 +19,7 @@ public class PerceptronsSegmentService {
     private PerceptronSegment ps;
 
 
-    static InternalLogger logger = InternalLoggerFactory.getInstance(PerceptronNerService.class);
+    static Logger logger = LoggerFactory.getLogger(PerceptronNerService.class);
 
     public PerceptronsSegmentService(MynlpEnv mynlp,
                                      PerceptronSegmentPatch perceptronSegmentPatch) throws Exception {

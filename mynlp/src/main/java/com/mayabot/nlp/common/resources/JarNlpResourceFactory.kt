@@ -1,6 +1,7 @@
 package com.mayabot.nlp.common.resources
 
-import com.mayabot.nlp.common.logging.InternalLoggerFactory
+
+import org.slf4j.LoggerFactory
 import java.io.BufferedInputStream
 import java.io.File
 import java.io.IOException
@@ -17,7 +18,7 @@ import java.util.zip.ZipFile
  */
 class JarNlpResourceFactory(private val baseDir: File) : NlpResourceFactory {
 
-    val logger = InternalLoggerFactory.getInstance(JarNlpResourceFactory::class.java)
+    val logger = LoggerFactory.getLogger(JarNlpResourceFactory::class.java)
 
     private val pattern = Pattern.compile("(\\d+)\\.(\\d+)\\.(\\d+)\\.jar$")
 

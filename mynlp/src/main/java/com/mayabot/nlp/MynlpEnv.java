@@ -17,9 +17,6 @@ package com.mayabot.nlp;
 
 import com.mayabot.nlp.common.SettingItem;
 import com.mayabot.nlp.common.Settings;
-import com.mayabot.nlp.common.logging.InternalLogLevel;
-import com.mayabot.nlp.common.logging.InternalLogger;
-import com.mayabot.nlp.common.logging.InternalLoggerFactory;
 import com.mayabot.nlp.common.resources.NlpResource;
 import com.mayabot.nlp.common.resources.NlpResourceFactory;
 import com.mayabot.nlp.common.utils.DictResDesc;
@@ -28,6 +25,8 @@ import com.mayabot.nlp.common.utils.DownloadUtils;
 import kotlin.text.Charsets;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.io.IOException;
@@ -46,7 +45,7 @@ import java.util.List;
  */
 public class MynlpEnv {
 
-    public static InternalLogger logger = InternalLoggerFactory.getInstance(MynlpEnv.class);
+    public static Logger logger = LoggerFactory.getLogger(MynlpEnv.class);
 
     /**
      * 数据目录
@@ -232,11 +231,8 @@ public class MynlpEnv {
             String version = desc.getVersion();
             String path = "https://repo.huaweicloud.com/repository/maven/" + group + "/" + jarName + "/" + version + "/" + jarName + "-" + version + ".jar";
             File to = new File(dataDir, jarName + "-" + version + ".jar");
-            if (logger.isEnabled(InternalLogLevel.INFO)) {
-                logger.info("Download " + jarName + ".jar From " + path + " --to--> " + to.getAbsolutePath());
-            } else {
-                System.out.println("Download " + jarName + ".jar From " + path + " --to--> " + to.getAbsolutePath());
-            }
+
+            logger.info("Download " + jarName + ".jar From " + path + " --to--> " + to.getAbsolutePath());
 
             try {
                 DownloadUtils.download(path, to);

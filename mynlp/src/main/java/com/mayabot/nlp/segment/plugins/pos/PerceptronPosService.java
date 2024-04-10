@@ -2,12 +2,12 @@ package com.mayabot.nlp.segment.plugins.pos;
 
 import com.mayabot.nlp.MynlpEnv;
 import com.mayabot.nlp.common.injector.Singleton;
-import com.mayabot.nlp.common.logging.InternalLogger;
-import com.mayabot.nlp.common.logging.InternalLoggerFactory;
 import com.mayabot.nlp.perceptron.PerceptronModel;
 import com.mayabot.nlp.segment.Nature;
 import com.mayabot.nlp.segment.WordTerm;
 import com.mayabot.nlp.segment.wordnet.Vertex;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,7 +24,7 @@ public class PerceptronPosService {
 
     private POSPerceptron perceptron;
 
-    static InternalLogger logger = InternalLoggerFactory.getInstance(PerceptronPosService.class);
+    static Logger logger = LoggerFactory.getLogger(PerceptronPosService.class);
 
     public PerceptronPosService(MynlpEnv mynlp) throws Exception {
         long t1 = System.currentTimeMillis();

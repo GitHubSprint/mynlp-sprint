@@ -19,12 +19,12 @@ import com.mayabot.nlp.MynlpEnv;
 import com.mayabot.nlp.algorithm.collection.dat.DoubleArrayTrieStringIntMap;
 import com.mayabot.nlp.common.EncryptionUtil;
 import com.mayabot.nlp.common.injector.Singleton;
-import com.mayabot.nlp.common.logging.InternalLogger;
-import com.mayabot.nlp.common.logging.InternalLoggerFactory;
 import kotlin.Pair;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function2;
 import org.jetbrains.annotations.Nullable;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.io.ObjectInput;
@@ -48,7 +48,7 @@ public class CoreDictionaryImpl extends BaseExternalizable implements CoreDictio
 
     private final MynlpEnv env;
 
-    private InternalLogger logger = InternalLoggerFactory.getInstance(CoreDictionaryImpl.class);
+    private Logger logger = LoggerFactory.getLogger(CoreDictionaryImpl.class);
 
     public static final String path = "core-dict/CoreDict.txt";
 

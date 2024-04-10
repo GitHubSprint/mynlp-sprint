@@ -12,9 +12,7 @@ import com.mayabot.nlp.segment.Lexer;
 import java.io.File;
 import java.util.List;
 
-/**
- * 酒店评论的分类测试
- */
+
 public class HotelCommentExampleTrain {
 
 
@@ -35,31 +33,30 @@ public class HotelCommentExampleTrain {
 
         fastText.test(testFile, 1, 0.0f, true);
 
-        // 乘积量化压缩模型和测试
         //FastText qFastText = fastText.quantize();
         //qFastText.test(testFile, 1, 0.0f, true);
 
-        // 保存模型
+
         fastText.saveModel("example.data/hotel.model");
 
         FastText fastText1 = FastText.loadModel(new File("example.data/hotel.model"), false);
 
         Lexer lexer = Mynlp.instance().hmmLexer();
 
-        List<TagAndScore> predict = fastText1.predict(lexer, "自己的加盟酒店总是这样我们还怎么相信携程这样的品牌总体来说我很郁闷！也特别的伤心");
+        List<TagAndScore> predict = fastText1.predict(lexer, "tak");
 
-        System.out.println("分类结果");
+
         for (TagAndScore score : predict) {
             System.out.println(score.getTag() + ": " + score.getScore());
         }
 
         for (int i = 0; i < 10000; i++) {
-            fastText1.predict(lexer, "自己的加盟酒店总是这样我们还怎么相信携程这样的品牌总体来说我很郁闷！也特别的伤心");
+            fastText1.predict(lexer, "nie");
         }
 
         long t1 = System.currentTimeMillis();
         for (int i = 0; i < 10000; i++) {
-            fastText1.predict(lexer, "自己的加盟酒店总是这样我们还怎么相信携程这样的品牌总体来说我很郁闷！也特别的伤心");
+            fastText1.predict(lexer, "tak");
         }
         long t2 = System.currentTimeMillis();
         System.out.println(t2 - t1);

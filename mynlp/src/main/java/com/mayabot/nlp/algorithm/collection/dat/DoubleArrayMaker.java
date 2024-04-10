@@ -1,7 +1,9 @@
 package com.mayabot.nlp.algorithm.collection.dat;
 
-import com.mayabot.nlp.common.logging.InternalLogger;
-import com.mayabot.nlp.common.logging.InternalLoggerFactory;
+
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -13,7 +15,7 @@ import java.util.List;
  */
 public class DoubleArrayMaker {
 
-    static InternalLogger logger = InternalLoggerFactory.getInstance(DoubleArrayMaker.class);
+    static Logger logger = LoggerFactory.getLogger(DoubleArrayMaker.class);
 
     static final int default_capacity = 1024 * 1024; // 4M
     static final int leastAddSize = 1024 * 1024; // 4M

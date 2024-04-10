@@ -13,14 +13,14 @@ public class CoreSegment {
         Lexer tokenizer = Lexers.core();
 
 
-        Sentence sentence = tokenizer.scan("mynlp是mayabot开源的中文NLP工具包。");
+        Sentence sentence = tokenizer.scan("mynlp to chiński zestaw narzędzi NLP typu open source firmy Mayabot.");
 
         System.out.println(sentence.toWordList());
 
 
         LexerReader analyzer = tokenizer.reader();
 
-        Reader reader = new StringReader("假装这是一个大文本");
+        Reader reader = new StringReader("Udawaj, że to jeden duży tekst");
         WordTermSequence result = analyzer.scan(reader);
         long t2 = System.currentTimeMillis();
         System.out.println(t2 - t1);

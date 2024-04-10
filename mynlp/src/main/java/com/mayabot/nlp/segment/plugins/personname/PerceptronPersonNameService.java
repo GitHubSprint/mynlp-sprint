@@ -2,12 +2,12 @@ package com.mayabot.nlp.segment.plugins.personname;
 
 import com.mayabot.nlp.MynlpEnv;
 import com.mayabot.nlp.common.injector.Singleton;
-import com.mayabot.nlp.common.logging.InternalLogger;
-import com.mayabot.nlp.common.logging.InternalLoggerFactory;
 import com.mayabot.nlp.common.resources.NlpResource;
 import com.mayabot.nlp.common.utils.CharNormUtils;
 import com.mayabot.nlp.perceptron.FeatureSet;
 import com.mayabot.nlp.segment.plugins.ner.PerceptronNerService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.BufferedInputStream;
 import java.io.File;
@@ -22,7 +22,7 @@ public class PerceptronPersonNameService {
 
     private PersonNamePerceptron perceptron;
 
-    static InternalLogger logger = InternalLoggerFactory.getInstance(PerceptronNerService.class);
+    static Logger logger = LoggerFactory.getLogger(PerceptronNerService.class);
 
     public PerceptronPersonNameService(MynlpEnv mynlp) throws Exception {
 
