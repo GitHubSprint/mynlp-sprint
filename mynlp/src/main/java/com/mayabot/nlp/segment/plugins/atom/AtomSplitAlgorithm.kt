@@ -113,8 +113,6 @@ class AtomSplitAlgorithm(
                 }
             }
 
-//            println(String(newChars))
-
             val match = dat.matchLong(newChars, 0)
 
             var bigXEnd = -1

@@ -21,7 +21,7 @@ import org.slf4j.LoggerFactory
 import java.util.function.Consumer
 
 /**
- * Mynlps 单例对象。默认提供一个全局单例mynlp对象
+ * Mynlps
  *
  * @author jimichan
  */
@@ -58,11 +58,6 @@ object Mynlps {
         }
     }
 
-    @Deprecated("")
-    fun config(consumer: (MynlpBuilder) -> Unit) {
-        this.install(consumer)
-    }
-
     /**
      * 设置DataDir。
      * 在调用install和其他任何Mynlp方式之前调用
@@ -79,18 +74,6 @@ object Mynlps {
     @Deprecated("")
     fun setCacheDir(dir: String) {
         Mynlp.configer().setCacheDir(dir)
-    }
-
-    @JvmStatic
-    @Deprecated("")
-    fun set(settingItem: SettingItem<*>, value: String) {
-        install { it.set(settingItem, value) }
-    }
-
-    @JvmStatic
-    @Deprecated("")
-    fun set(key: String, value: String) {
-        install { it.set(key, value) }
     }
 
     /**

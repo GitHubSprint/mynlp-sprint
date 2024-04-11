@@ -10,15 +10,6 @@ import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * 所谓的Index类型的子词切分。
- * <p>
- * 收集子词所有的可能性组合，比如 北京大学 => 北京 大学 京大
- * <p>
- * 这里的实现也不是通过ngram把所有的可能性组合一遍，应该和Wordnet中的信息有关系
- *
- * @author jimichan
- */
 public class IndexSubwordComputer implements SubwordComputer {
     /**
      * 字词的最小长度

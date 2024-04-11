@@ -80,13 +80,13 @@ public class Characters {
 
 
     /**
-     * 把半角字符转成全角字符
+     * Konwertuj znaki o połowie szerokości na znaki o pełnej szerokości
      * System.out.println(((char)('\u0020'+i)+"   "+(char)('\uFF00'+i)));
      * Range: FF00–FF5E
      * Range: 0020-007E
-     * 全角空格为12288，半角空格为32
-     * 其他字符半角(33-126)与全角(65281-65374)的对应关系是：均相差65248
-     * 为半角字符=>全角字符转换
+     * Spacje o pełnej szerokości to 12288, spacje o połowie szerokości to 32
+     * Odpowiednia relacja między innymi znakami o połowie szerokości (33-126) i pełnej szerokości (65281-65374) jest następująca: różnica wynosi 65248
+     * to znak o połowie szerokości - konwersja znaku o pełnej szerokości
      *
      * @return String
      */

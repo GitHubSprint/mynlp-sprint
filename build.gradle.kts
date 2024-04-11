@@ -102,18 +102,6 @@ subprojects {
                                 }
                             }
                         }
-
-//                        if (!snapShot && project.hasProperty("github_token")) {
-//                            maven {
-//                                name 'GithubPublic'
-//                                url = "https://maven.pkg.github.com/mayabot/mynlp"
-//
-//                                credentials {
-//                                    username "jimichan"
-//                                    password "${github_token}"
-//                                }
-//                            }
-//                        }
                     }
 
                     pom {

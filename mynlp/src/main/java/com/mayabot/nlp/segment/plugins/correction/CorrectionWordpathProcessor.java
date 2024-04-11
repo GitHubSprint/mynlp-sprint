@@ -22,18 +22,6 @@ import com.mayabot.nlp.segment.WordpathProcessor;
 import com.mayabot.nlp.segment.common.BaseSegmentComponent;
 import com.mayabot.nlp.segment.wordnet.Wordpath;
 
-/**
- * 自定分词纠错。
- * 放在最后一步
- * 纠错的逻辑仅限：
- * 1.一个词拆为多个词
- * 2.多词组合和拆分 AB CDE FG => ABC DE FG
- * <p>
- * 一定不能把已经成词的边界破坏掉
- * Created by jimichan on 2017/7/3.
- *
- * @author jimichan
- */
 public class CorrectionWordpathProcessor extends BaseSegmentComponent implements WordpathProcessor {
 
     private final CorrectionDictionary dictionary;
