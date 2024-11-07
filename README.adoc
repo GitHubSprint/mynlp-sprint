@@ -2,6 +2,8 @@
 :version: 4.0.0
 :icons: font
 
+./gradlew publishToMavenLocal
+
 image:https://img.shields.io/github/license/mayabot/mynlp.svg[]
 image:https://maven-badges.herokuapp.com/maven-central/com.mayabot.mynlp/mynlp/badge.svg[link=https://maven-badges.herokuapp.com/maven-central/com.mayabot.mynlp/mynlp]
 image:https://img.shields.io/github/release/mayabot/mynlp/all.svg[link=https://github.com/mayabot/mynlp/releases/latest]
