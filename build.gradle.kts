@@ -9,7 +9,7 @@ plugins {
 
 description = "mynlp mayabot"
 
-val buildVersion = "4.1.3-sprint"
+val buildVersion = "4.1.4-sprint"
 //val buildVersion = "4.0.1-local"
 val snapShot = false
 
