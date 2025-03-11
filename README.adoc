@@ -3,7 +3,6 @@
 :icons: font
 
 
-
 image:https://img.shields.io/github/license/mayabot/mynlp.svg[]
 image:https://maven-badges.herokuapp.com/maven-central/com.mayabot.mynlp/mynlp/badge.svg[link=https://maven-badges.herokuapp.com/maven-central/com.mayabot.mynlp/mynlp]
 image:https://img.shields.io/github/release/mayabot/mynlp/all.svg[link=https://github.com/mayabot/mynlp/releases/latest]
@@ -20,13 +19,11 @@ COMPILE ./gradlew publishToMavenLocal
 
 link:https://mynlp.mayabot.com/[ mynlp.mayabot.com]
 
-== QQ群（2）：747892793
+== QQGroup（2）：747892793
 
-== 安装
+This section describes how to install and use the basic functions of mynlp.
 
-该章节介绍如何安装和简单使用mynlp的基础功能。
-
-mynlp已经发布在Maven中央仓库中，所以只需要在Maven或者Gradle中引入mynlp.jar依赖即可。
+mynlp has been published in the Maven central repository, so you only need to introduce the mynlp.jar dependency in Maven or Gradle.
 
 .Gradle
 [subs="attributes+"]
@@ -44,19 +41,19 @@ compile 'com.mayabot.mynlp:mynlp:{version}'
 </dependency>
 ----
 
-因为资源文件较大，所以mynlp.jar包默认不包括资源文件（词典和模型文件）依赖。
+Because the resource files are large, the mynlp.jar package does not include resource file (dictionary and model file) dependencies by default.
 
-懒人方案，通过引用mynlp-all依赖默认提供的资源词典，满足大部分需求。
+Lazy solution, by referencing the resource dictionary provided by default in the mynlp-all dependency, most requirements are met.
 
-.依赖 mynlp-all
+.depends mynlp-all
 [subs="attributes+"]
 ----
 compile 'com.mayabot.mynlp:mynlp-all:{version}'
 ----
 
-=== 词典和模型资源
+=== Dictionary and model resources
 
-.词典&模型资源列表
+.Dictionary & model resource list
 [cols="6,^1,^1,4"]
 |===
 |Gradle 坐标 | mynlp-all依赖 |文件大小 |说明
@@ -64,12 +61,12 @@ compile 'com.mayabot.mynlp:mynlp-all:{version}'
 |com.mayabot.mynlp.resource:mynlp-resource-coredict:1.0.0
 |Y
 |18.2M
-|核心词典（20w+词，500w+二元）
+|Core dictionary (200,000+ words, 5,000,000+ bigrams)
 
 |com.mayabot.mynlp.resource:mynlp-resource-pos:1.0.0
 |Y
 |17.5M
-|词性标注模型（感知机模型）
+|Part-of-speech tagging model (perceptron model)
 
 |com.mayabot.mynlp.resource:mynlp-resource-ner:1.0.0
 |Y
@@ -79,62 +76,62 @@ compile 'com.mayabot.mynlp:mynlp-all:{version}'
 |com.mayabot.mynlp.resource:mynlp-resource-pinyin:1.1.0
 |Y
 |272K
-|拼音词典、拼音切分模型
+|Pinyin dictionary, Pinyin segmentation model
 
 |com.mayabot.mynlp.resource:mynlp-resource-transform:1.0.0
 |Y
 |478K
-|繁简体词典
+|Traditional and Simplified Chinese Dictionary
 
 |com.mayabot.mynlp.resource:mynlp-resource-cws:1.0.0
 |N
 |62.4M
-|感知机分词模型
+|Perceptron word segmentation model
 
 |com.mayabot.mynlp.resource:mynlp-resource-custom:1.0.0
 |N
 |2.19M
-|自定义扩展词库
+|Customized extended vocabulary
 
 |===
 
-根据实际的需要，按需引入资源包。
+Introduce resource packages as needed based on actual needs.
 
 [source]
-.一个Gradle引用的例子
+.一个Gradle Examples of citations
 ----
 compile 'com.mayabot.mynlp:mynlp:3.2.0'
 
-// 核心词典
+// Core Dictionary
 implementation 'com.mayabot.mynlp.resource:mynlp-resource-coredict:1.0.0'
 
-// 词性标注
+// Part-of-speech tagging
 implementation 'com.mayabot.mynlp.resource:mynlp-resource-pos:1.0.0'
 
-// 命名实体
+// Named Entities
 implementation 'com.mayabot.mynlp.resource:mynlp-resource-ner:1.0.0'
 
-// 拼音
+// Pinyin
 implementation 'com.mayabot.mynlp.resource:mynlp-resource-pinyin:1.1.0'
 
-// 繁简体转换
+// Traditional and Simplified Chinese Conversion
 implementation 'com.mayabot.mynlp.resource:mynlp-resource-transform:1.0.0'
 
-// 感知机分词模型
+// Perceptron word segmentation model
 //   implementation 'com.mayabot.mynlp.resource:mynlp-resource-cws:1.0.0'
 
-// 自定义扩展词库
+// Customized extended vocabulary
 //   implementation 'com.mayabot.mynlp.resource:mynlp-resource-custom:1.0.0'
 ----
 
 
-== 访问完整在线文档
+== Access the full online documentation
 
 link:https://mynlp.mayabot.com/[mynlp.mayabot.com]
 
-== 致谢以下优秀开源项目
+== Thanks to the following excellent open source projects
 
 - HanLP
 - ansj_seg
 
-mynlp实现参考了他们算法实现和部分代码
+mynlp The implementation refers to their algorithm implementation and some codes
