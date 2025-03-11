@@ -56,7 +56,7 @@ compile 'com.mayabot.mynlp:mynlp-all:{version}'
 .Dictionary & model resource list
 [cols="6,^1,^1,4"]
 |===
-|Gradle 坐标 | mynlp-all依赖 |文件大小 |说明
+|Gradle coordinate | mynlp-all rely |File Size | Description
 
 |com.mayabot.mynlp.resource:mynlp-resource-coredict:1.0.0
 |Y
@@ -71,7 +71,7 @@ compile 'com.mayabot.mynlp:mynlp-all:{version}'
 |com.mayabot.mynlp.resource:mynlp-resource-ner:1.0.0
 |Y
 |13.4M
-|命名实体识别（人名识别、其他NER）
+|Named entity recognition (person name recognition, other NER)
 
 |com.mayabot.mynlp.resource:mynlp-resource-pinyin:1.1.0
 |Y
